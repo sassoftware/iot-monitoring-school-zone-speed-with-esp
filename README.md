@@ -33,8 +33,10 @@
 * [License](#license)
 * [Additional Resources](#additional-resources)
 
+[![Monitoring School Zone Speed with ESP: Concepts](/images/video1.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+ "Monitoring School Zone Speed with ESP: Concepts")
 
-![](videos/polyline_concepts.mp4)
 
 ## Overview
 
@@ -340,15 +342,23 @@ This project includes a project file, sensor_log.xml, you can execute. The proje
 
 ### Examples
 
-![](videos/polyline_command_line.mp4)
+[![Monitoring School Zone Speed with ESP: Command Line](/images/video2.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+ "Monitoring School Zone Speed with ESP: Command Line")
+
 
 _Execute the project at the Command Line_
 
-![](videos/polyline_studio.mp4)
+[![Monitoring School Zone Speed with ESP: ESP Studio](/images/video3.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+ "Monitoring School Zone Speed with ESP: ESP Studio")
+
 
 _Execute the project with SAS ESP Studio_
 
-![](videos/polyline_socket.mp4)
+[![Monitoring School Zone Speed with ESP: Socket Connection](/images/video4.png)](
+https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+ "Monitoring School Zone Speed with ESP: Socket Connection")
 
 _Making a Socket Connection_
 
