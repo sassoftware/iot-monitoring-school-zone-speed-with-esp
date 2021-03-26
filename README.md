@@ -34,7 +34,7 @@
 * [Additional Resources](#additional-resources)
 
 [![Monitoring School Zone Speed with ESP: Concepts](/images/video1.png)](
-https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+http://sas-social.brightcovegallery.com/sharing?videoId=6244470374001
  "Monitoring School Zone Speed with ESP: Concepts")
 
 
@@ -343,21 +343,21 @@ This project includes a project file, sensor_log.xml, you can execute. The proje
 ### Examples
 
 [![Monitoring School Zone Speed with ESP: Command Line](/images/video2.png)](
-https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+http://sas-social.brightcovegallery.com/sharing?videoId=6244469480001
  "Monitoring School Zone Speed with ESP: Command Line")
 
 
 _Execute the project at the Command Line_
 
 [![Monitoring School Zone Speed with ESP: ESP Studio](/images/video3.png)](
-https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+http://sas-social.brightcovegallery.com/sharing?videoId=6244460939001
  "Monitoring School Zone Speed with ESP: ESP Studio")
 
 
 _Execute the project with SAS ESP Studio_
 
 [![Monitoring School Zone Speed with ESP: Socket Connection](/images/video4.png)](
-https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6180862720001
+http://sas-social.brightcovegallery.com/sharing?videoId=6244469249001
  "Monitoring School Zone Speed with ESP: Socket Connection")
 
 _Making a Socket Connection_
