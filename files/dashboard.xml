@@ -1,0 +1,974 @@
+<rows continue-on-error='false'>
+   <insert table='streamviewer_server'>
+      <values>
+         <value column='id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='name'>ESP Trial Server</value>
+         <value column='host'>localhost</value>
+         <value column='port'>5002</value>
+         <value column='secure'>0</value>
+         <value column='stats_interval'>1</value>
+         <value column='cpu_percentage'>5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>326067af-0f8f-40bd-af1f-ea9448b1250f</value>
+         <value column='name'>Utilities - Smart Campus</value>
+         <value column='creation_time'>1584464414664</value>
+         <value column='description'>Prior to open this dashboard, the ESP Studio project "anomaly_detection" needs to be running in test mode</value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+         <value column='name'>Utilities - Smart Grid</value>
+         <value column='creation_time'>1584464572285</value>
+         <value column='description'>Prior to open this dashboard, the ESP Studio project "utilities_pmu" needs to be running in test mode</value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+         <value column='name'>Healthcare - False Positives</value>
+         <value column='creation_time'>1584464623693</value>
+         <value column='description'>Prior to open this dashboard, the ESP Studio project "healthcare_false_positives" needs to be running in test mode</value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+         <value column='name'>Manufacturing - Vibration Analytics</value>
+         <value column='creation_time'>1584464670319</value>
+         <value column='description'>Prior to open this dashboard, the ESP Studio project "manufacturing_vibration_analytics" needs to be running in test mode</value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+         <value column='name'>Energy - Solar Farm</value>
+         <value column='creation_time'>1584464701173</value>
+         <value column='description'>This dashboard uses the ESP pre-loaded project "energy_solar_farm" </value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+         <value column='name'>Retail - Smart Shelves</value>
+         <value column='creation_time'>1597077644456</value>
+         <value column='description'>Prior to open this dashboard, the ESP Studio project "retail_smart_shelf" needs to be running in test mode</value>
+         <value column='graph_skin'>crisp</value>
+         <value column='kpi_skin'>satin</value>
+         <value column='properties'>suppress-subtitle=true</value>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_dashboard'>
+      <values>
+         <value column='id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+         <value column='name'>Monitor School Zones</value>
+         <value column='creation_time'>1612182434284</value>
+         <value column='description'/>
+         <value column='graph_skin'>sheen</value>
+         <value column='kpi_skin'>basic</value>
+         <value column='properties'/>
+         <value column='key_separator'>.</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>5a6cf96f-3f4a-44e8-804d-c91cae84351d</value>
+         <value column='name'>Energy_Solar_Farm_input</value>
+         <value column='p'>energy_solar_farm</value>
+         <value column='cq'>Query_1</value>
+         <value column='w'>Energy_Solar_Farm_input</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>3ab5c31b-210b-4634-ac79-0014040e104b</value>
+         <value column='name'>Moving_Average</value>
+         <value column='p'>energy_solar_farm</value>
+         <value column='cq'>Query_1</value>
+         <value column='w'>Moving_Average</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>07ab04bc-f02b-4c7b-84f3-3dbd90367455</value>
+         <value column='name'>Utilities_PMU_input</value>
+         <value column='p'>utilities_pmu</value>
+         <value column='cq'>pmu_cq</value>
+         <value column='w'>Utilities_PMU_input</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>798ef8ed-5fcb-42d2-ab37-451fd40de4d8</value>
+         <value column='name'>CURR_MAG_data_view</value>
+         <value column='p'>utilities_pmu</value>
+         <value column='cq'>pmu_cq</value>
+         <value column='w'>CURR_MAG_data_view</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>8481732f-2e45-4417-9128-f67a0b5e443c</value>
+         <value column='name'>VOLT_MAG_data_view</value>
+         <value column='p'>utilities_pmu</value>
+         <value column='cq'>pmu_cq</value>
+         <value column='w'>VOLT_MAG_data_view</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>2bab3d78-c02d-4af6-8124-72af0641531c</value>
+         <value column='name'>Vital_readings</value>
+         <value column='p'>healthcare_false_positives</value>
+         <value column='cq'>Vitals_cq</value>
+         <value column='w'>Vital_readings</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>2dc9d1f9-eef2-46a0-91bc-442d452d4997</value>
+         <value column='name'>Vital_readings</value>
+         <value column='p'>healthcare_false_positives</value>
+         <value column='cq'>Vitals_cq</value>
+         <value column='w'>Vital_readings</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>cf8f65cb-8be9-471c-80be-67df1d9f56e1</value>
+         <value column='name'>Alerts</value>
+         <value column='p'>healthcare_false_positives</value>
+         <value column='cq'>Vitals_cq</value>
+         <value column='w'>Union1</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'>pateint_id_1</value>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>346ccf66-29c8-4248-bd71-abfd534a752f</value>
+         <value column='name'>SensorData</value>
+         <value column='p'>manufacturing_vibration_analytics</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>SensorData</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'>descending</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>791c8476-ad0e-4d73-b28e-192f5ed014e9</value>
+         <value column='name'>Total Counts</value>
+         <value column='p'>manufacturing_vibration_analytics</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>TotalCounts</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'>descending</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>1e302c79-7c48-4909-8324-cbda8a463536</value>
+         <value column='name'>Aggregate3</value>
+         <value column='p'>manufacturing_vibration_analytics</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Aggregate3</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'>descending</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>7cdd220f-5c74-4471-9278-255ab86a0788</value>
+         <value column='name'>sst_model</value>
+         <value column='p'>anomaly_detection</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>sst_model</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>326067af-0f8f-40bd-af1f-ea9448b1250f</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>96354eb4-8b1c-4e3b-8931-15b7cad56370</value>
+         <value column='name'>floodlights_data</value>
+         <value column='p'>anomaly_detection</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>floodlights_data</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>326067af-0f8f-40bd-af1f-ea9448b1250f</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>31d986d3-40ce-4105-8398-e4345a4dba00</value>
+         <value column='name'>Shelf 1 Occupancy</value>
+         <value column='p'>retail_smart_shelf</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Shelf_Occupancy</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'>equals($NodeID,"node-1")</value>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>178b5b11-97e5-4df6-b619-642e88674449</value>
+         <value column='name'>Shelf 2 Occupancy</value>
+         <value column='p'>retail_smart_shelf</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Shelf_Occupancy</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'>equals($NodeID,"node-2")</value>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>8c957a7c-7da8-4bb8-92a0-84d1be49467d</value>
+         <value column='name'>Shelf 3 Occupancy</value>
+         <value column='p'>retail_smart_shelf</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Shelf_Occupancy</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'>equals($NodeID,"node-3")</value>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>9da09996-9507-4c7a-a678-21ba35d7a2c9</value>
+         <value column='name'>Shelf 4 Occupancy</value>
+         <value column='p'>retail_smart_shelf</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Shelf_Occupancy</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'>equals($NodeID,"node-4")</value>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>a72551ef-9b2e-4120-826d-bb915649f8f4</value>
+         <value column='name'>Shelf_Occupancy</value>
+         <value column='p'>retail_smart_shelf</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>Shelf_Occupancy</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>aa88b096-634a-49d8-a210-7f2eabbd8525</value>
+         <value column='name'>violations</value>
+         <value column='p'>sensor_log</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>violations</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>c4d9b0c7-0493-4ec2-9d64-648d11af9067</value>
+         <value column='name'>monitorSchoolZones</value>
+         <value column='p'>sensor_log</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>monitorSchoolZones</value>
+         <value column='subscriber_mode'>streaming</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>1000</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_subscriber'>
+      <values>
+         <value column='id'>60f0a0bf-e855-4c0e-942a-d68f5b9d0937</value>
+         <value column='name'>errors</value>
+         <value column='p'>sensor_log</value>
+         <value column='cq'>cq1</value>
+         <value column='w'>errors</value>
+         <value column='subscriber_mode'>updating</value>
+         <value column='pagesize'>50</value>
+         <value column='delivery_interval'>0</value>
+         <value column='filter'/>
+         <value column='sort_field'/>
+         <value column='direction'/>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>182591b4-dea9-4fff-a6af-4dac7eafc063</value>
+         <value column='name'>SensorData</value>
+         <value column='win'>manufacturing_vibration_analytics/cq1/SensorData</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>table</value>
+         <value column='fields'>datetime,Frequency,FrequencyOutput,CurrentOutput,TemperaturePV,TemperatureSV,ai0,ai1,ai2,ai3</value>
+         <value column='options'/>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>792</value>
+         <value column='height'>422</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>cfee27df-1ea2-49ba-ba82-12be1a5d98ae</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>141960f7-a26b-4817-8682-ffe519f27310</value>
+         <value column='name'>Energy Consumption of Floodlights (in kW)</value>
+         <value column='win'>anomaly_detection/cq1/floodlights_data</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,Light_1,Light_2,Light_3,Light_4,Light_5,Light_6</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=false,xAxisTitle=true,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>637</value>
+         <value column='height'>644</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>96354eb4-8b1c-4e3b-8931-15b7cad56370</value>
+         <value column='dashboard_id'>326067af-0f8f-40bd-af1f-ea9448b1250f</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>cab011ce-8a97-4def-aa92-7b5feb8ff601</value>
+         <value column='name'>Angle Change</value>
+         <value column='win'>anomaly_detection/cq1/sst_model</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,PCAngleChangeOut</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=true,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>659</value>
+         <value column='y'>9</value>
+         <value column='width'>608</value>
+         <value column='height'>648</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>7cdd220f-5c74-4471-9278-255ab86a0788</value>
+         <value column='dashboard_id'>326067af-0f8f-40bd-af1f-ea9448b1250f</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>18d6c7db-e620-4678-8c9d-4dafc47208aa</value>
+         <value column='name'>Input Data</value>
+         <value column='win'>utilities_pmu/pmu_cq/Utilities_PMU_input</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>table</value>
+         <value column='fields'>_counter,attribute,timestamp,value</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>607</value>
+         <value column='height'>590</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>07ab04bc-f02b-4c7b-84f3-3dbd90367455</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>805ed3e5-a979-454b-b01e-6b316cef0fd7</value>
+         <value column='name'>Current</value>
+         <value column='win'>utilities_pmu/pmu_cq/CURR_MAG_data_view</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,value,forecast</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=1000,ymax=1040,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>639</value>
+         <value column='y'>11</value>
+         <value column='width'>724</value>
+         <value column='height'>288</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>798ef8ed-5fcb-42d2-ab37-451fd40de4d8</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>9fc8cba6-235b-4f4d-8222-0d4e5d7af739</value>
+         <value column='name'>Voltage</value>
+         <value column='win'>utilities_pmu/pmu_cq/VOLT_MAG_data_view</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,value,forecast</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=536100,ymax=536500,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>638</value>
+         <value column='y'>316</value>
+         <value column='width'>725</value>
+         <value column='height'>283</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>8481732f-2e45-4417-9128-f67a0b5e443c</value>
+         <value column='dashboard_id'>a7daa75f-f395-4e3b-a6c8-7bbc40b4bfe5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>caa8db69-9d02-4594-84a9-be3a814810bf</value>
+         <value column='name'>Alerts</value>
+         <value column='win'>healthcare_false_positives/Vitals_cq/Union1</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>table</value>
+         <value column='fields'>pateint_id_1,alert_type</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>972</value>
+         <value column='y'>447</value>
+         <value column='width'>471</value>
+         <value column='height'>391</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>cf8f65cb-8be9-471c-80be-67df1d9f56e1</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>08b2c64a-f444-489e-a949-1027c651bbe0</value>
+         <value column='name'>Vital Readings</value>
+         <value column='win'>healthcare_false_positives/Vitals_cq/Vital_readings</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>table</value>
+         <value column='fields'>_counter,Name,patient_id,bpm,emg,ecg,temperature</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>1432</value>
+         <value column='height'>426</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>2bab3d78-c02d-4af6-8124-72af0641531c</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>3021eb90-6410-42a8-94a9-4821285796a1</value>
+         <value column='name'>Vital Readings - BPM</value>
+         <value column='win'>healthcare_false_positives/Vitals_cq/Vital_readings</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>vbar</value>
+         <value column='fields'>patient_id,bpm,emg,ecg,temperature</value>
+         <value column='options'>showLegend=true,isStacked=false,dataLabel=,xAxisTitle=true,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>448</value>
+         <value column='width'>949</value>
+         <value column='height'>390</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>2dc9d1f9-eef2-46a0-91bc-442d452d4997</value>
+         <value column='dashboard_id'>4e4ca6a7-bfd7-4aed-b915-3287b7e4b1fe</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>f795279b-ef5b-4d9c-be44-956f3b516582</value>
+         <value column='name'>Status</value>
+         <value column='win'>manufacturing_vibration_analytics/cq1/Aggregate3</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>wordcloud</value>
+         <value column='fields'>Description,Count,Count</value>
+         <value column='options'>showLegend=true,colormin=,colormax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>1134</value>
+         <value column='y'>516</value>
+         <value column='width'>480</value>
+         <value column='height'>251</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>1e302c79-7c48-4909-8324-cbda8a463536</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>25e5df3f-59f0-4aec-9c47-73782254197b</value>
+         <value column='name'>Sensor Data</value>
+         <value column='win'>manufacturing_vibration_analytics/cq1/SensorData</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>table</value>
+         <value column='fields'>datetime,Frequency,FrequencyOutput,CurrentOutput,TemperaturePV,TemperatureSV,ai0,ai1,ai2,ai3</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>804</value>
+         <value column='height'>757</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>346ccf66-29c8-4248-bd71-abfd534a752f</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>586abcc4-7b32-4a65-8a73-fd2bab3481af</value>
+         <value column='name'>Prediction Counts</value>
+         <value column='win'>manufacturing_vibration_analytics/cq1/TotalCounts</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>treemap</value>
+         <value column='fields'>Prediction,Count</value>
+         <value column='options'>showLegend=true,colormin=,colormax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>824</value>
+         <value column='y'>516</value>
+         <value column='width'>301</value>
+         <value column='height'>251</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>791c8476-ad0e-4d73-b28e-192f5ed014e9</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>c6fde465-eb10-4249-9f2c-47b05c5a0b44</value>
+         <value column='name'>Sensor Data</value>
+         <value column='win'>manufacturing_vibration_analytics/cq1/SensorData</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>line</value>
+         <value column='fields'>datetime,ai0,ai1,ai2</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=true,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>824</value>
+         <value column='y'>12</value>
+         <value column='width'>789</value>
+         <value column='height'>488</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>346ccf66-29c8-4248-bd71-abfd534a752f</value>
+         <value column='dashboard_id'>cd5a1ece-c962-427f-8070-9c959740e290</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>f7b6273c-378c-4396-98dd-f16e9b3be5c8</value>
+         <value column='name'>Generated Energy Average Values</value>
+         <value column='win'>energy_solar_farm/Query_1/Moving_Average</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,avgIntkWh,avgIntkW</value>
+         <value column='options'>showLegend=true,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>7</value>
+         <value column='y'>471</value>
+         <value column='width'>810</value>
+         <value column='height'>388</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>3ab5c31b-210b-4634-ac79-0014040e104b</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>54f0886c-9531-4428-925e-9df7d119462e</value>
+         <value column='name'>Energy Solar Farm input</value>
+         <value column='win'>energy_solar_farm/Query_1/Energy_Solar_Farm_input</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>table</value>
+         <value column='fields'>_counter,SolarFarm,Season,Time,Date,IntkWh,IntkW</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>6</value>
+         <value column='y'>9</value>
+         <value column='width'>812</value>
+         <value column='height'>450</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>5a6cf96f-3f4a-44e8-804d-c91cae84351d</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>25c3abf5-b64c-4a45-b611-c0ad0a178d82</value>
+         <value column='name'>Generated Energy Tracking Chart</value>
+         <value column='win'>energy_solar_farm/Query_1/Energy_Solar_Farm_input</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>bubble</value>
+         <value column='fields'>_counter,IntkW,AgkWh,IntkWh</value>
+         <value column='options'>showLegend=true,xAxisTitle=true,yAxisTitle=false,xmin=,xmax=,ymin=,ymax=,colormin=,colormax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>827</value>
+         <value column='y'>7</value>
+         <value column='width'>737</value>
+         <value column='height'>451</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>5a6cf96f-3f4a-44e8-804d-c91cae84351d</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>27f8631b-5a0a-4d25-b2e2-105a0c6eb3ee</value>
+         <value column='name'>Generated Energy Event Spikes</value>
+         <value column='win'>energy_solar_farm/Query_1/Energy_Solar_Farm_input</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>treemap</value>
+         <value column='fields'>_counter,IntkWh</value>
+         <value column='options'>showLegend=true,colormin=,colormax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>826</value>
+         <value column='y'>470</value>
+         <value column='width'>738</value>
+         <value column='height'>389</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>5a6cf96f-3f4a-44e8-804d-c91cae84351d</value>
+         <value column='dashboard_id'>5181bb9e-dfce-4dda-ba26-2c2b7c3f9ca5</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>4c0f45a5-5d5f-4741-b52e-58bc40ba26ff</value>
+         <value column='name'>Alerts List</value>
+         <value column='win'>retail_smart_shelf/cq1/All_Alerts</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>table</value>
+         <value column='fields'>_counter,alert_type,node,product_id</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,title=Alerts List,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>11</value>
+         <value column='y'>334</value>
+         <value column='width'>611</value>
+         <value column='height'>250</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>20debab7-8927-4b91-9dd3-dbc9541d7f68</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>7e63933f-a6ff-4d95-85ba-e715a1c4b500</value>
+         <value column='name'>Shelf 1 Occupancy</value>
+         <value column='win'>retail_smart_shelf/cq1/Shelf_Occupancy</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,number_on_shelf</value>
+         <value column='options'>showLegend=false,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>638</value>
+         <value column='y'>10</value>
+         <value column='width'>467</value>
+         <value column='height'>285</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>31d986d3-40ce-4105-8398-e4345a4dba00</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>e842e930-4f66-417e-a758-7ade3bcbaed2</value>
+         <value column='name'>Shelf 2 Occupancy</value>
+         <value column='win'>retail_smart_shelf/cq1/Shelf_Occupancy</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,number_on_shelf</value>
+         <value column='options'>showLegend=false,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>1115</value>
+         <value column='y'>10</value>
+         <value column='width'>455</value>
+         <value column='height'>282</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>178b5b11-97e5-4df6-b619-642e88674449</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>cd346529-cc29-44cf-ab9e-958a141f2481</value>
+         <value column='name'>Shelf 3 Occupancy</value>
+         <value column='win'>retail_smart_shelf/cq1/Shelf_Occupancy</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,number_on_shelf</value>
+         <value column='options'>showLegend=false,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>639</value>
+         <value column='y'>302</value>
+         <value column='width'>462</value>
+         <value column='height'>285</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>8c957a7c-7da8-4bb8-92a0-84d1be49467d</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>b740dd13-cb00-4dec-877c-90dafd24ae15</value>
+         <value column='name'>Shelf 4 Occupancy</value>
+         <value column='win'>retail_smart_shelf/cq1/Shelf_Occupancy</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>line</value>
+         <value column='fields'>_counter,number_on_shelf</value>
+         <value column='options'>showLegend=false,lineCurved=false,lineWidth=2,fill=true,xAxisTitle=false,yAxisTitle=false,ymin=,ymax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>1114</value>
+         <value column='y'>302</value>
+         <value column='width'>455</value>
+         <value column='height'>278</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>9da09996-9507-4c7a-a678-21ba35d7a2c9</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>e923a40f-7fa9-43c8-8656-9acb3c26549d</value>
+         <value column='name'>Shelf Occupancy</value>
+         <value column='win'>retail_smart_shelf/cq1/Shelf_Occupancy</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>table</value>
+         <value column='fields'>_counter,NodeID,product_name,number_on_shelf</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>10</value>
+         <value column='width'>616</value>
+         <value column='height'>570</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>a72551ef-9b2e-4120-826d-bb915649f8f4</value>
+         <value column='dashboard_id'>a7431c42-e8f7-45d0-8a81-1303e18b84b8</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>037811e3-2dcb-46b4-92a2-066219fae815</value>
+         <value column='name'>errors</value>
+         <value column='win'>sensor_log/cq1/errors</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>table</value>
+         <value column='fields'>id,vendorId,locLatitude,locLongitude,speedMPH,compassDir,altitudeFt,datetimeFmt,locationError</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>13</value>
+         <value column='y'>482</value>
+         <value column='width'>963</value>
+         <value column='height'>295</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>60f0a0bf-e855-4c0e-942a-d68f5b9d0937</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>23fc4ee5-f40c-4bb9-9f35-7fa9e663200e</value>
+         <value column='name'>violations</value>
+         <value column='win'>sensor_log/cq1/violations</value>
+         <value column='event_mode'>updating</value>
+         <value column='visual'>table</value>
+         <value column='fields'>patternID,vendorID,schoolZone,direction,speedMPH_e1</value>
+         <value column='options'>showLegend=true,imageWidth=0,imageHeight=0,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>994</value>
+         <value column='y'>18</value>
+         <value column='width'>586</value>
+         <value column='height'>761</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>aa88b096-634a-49d8-a210-7f2eabbd8525</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+   <insert table='streamviewer_chart'>
+      <values>
+         <value column='id'>ba3fe9f3-18eb-4f5b-b7e3-6dcad9317b60</value>
+         <value column='name'>monitorSchoolZones</value>
+         <value column='win'>sensor_log/cq1/monitorSchoolZones</value>
+         <value column='event_mode'>streaming</value>
+         <value column='visual'>map</value>
+         <value column='fields'>locLatitude,locLongitude,speedMPH,speedMPH</value>
+         <value column='options'>showLegend=true,dataLabel=geoid,colormin=,colormax=,orientation=horizontal</value>
+         <value column='hyperlink'/>
+         <value column='x'>10</value>
+         <value column='y'>16</value>
+         <value column='width'>963</value>
+         <value column='height'>458</value>
+         <value column='snapshot'>0</value>
+         <value column='server_id'>4bb24dfa-c9ea-451a-ad22-83acaa4f5c91</value>
+         <value column='subscriber_id'>c4d9b0c7-0493-4ec2-9d64-648d11af9067</value>
+         <value column='dashboard_id'>ec2bed62-0b15-4b8c-a4bc-7fbde347f139</value>
+      </values>
+   </insert>
+</rows>

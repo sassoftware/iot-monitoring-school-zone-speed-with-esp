@@ -1,0 +1,209 @@
+<project name="sensor_log" threads="1" pubsub="auto" heartbeat-interval="1">
+  <metadata>
+    <meta id="studioUploadedBy">zeph.stemle@sas.com</meta>
+    <meta id="studioUploaded">1612800285154</meta>
+    <meta id="studioModifiedBy">zeph.stemle@sas.com</meta>
+    <meta id="studioModified">1613402578142</meta>
+    <meta id="layout">{"cq1":{"changeToInsert":{"x":55,"y":290},"convertToImperial":{"x":-105,"y":-85},"errors":{"x":-260,"y":40},"inSchoolZone":{"x":55,"y":165},"inputGPS":{"x":-105,"y":-220},"monitorSchoolZones":{"x":55,"y":40},"schooolZones":{"x":165,"y":-80},"sendWarning":{"x":55,"y":545},"violations":{"x":55,"y":420}}}</meta>
+  </metadata>
+  <contqueries>
+    <contquery name="cq1">
+      <windows>
+        <window-source pubsub="true" name="inputGPS">
+          <schema>
+            <fields>
+              <field name="logTime" type="string"/>
+              <field name="id" type="int64" key="true"/>
+              <field name="vendorId" type="string"/>
+              <field name="locDatetime" type="string"/>
+              <field name="locLatitude" type="double"/>
+              <field name="locLongitude" type="double"/>
+              <field name="locAltitude" type="double"/>
+              <field name="locSpeed" type="double"/>
+              <field name="locCourse" type="double"/>
+              <field name="locVerAcc" type="double"/>
+              <field name="locHorAcc" type="double"/>
+              <field name="locFloor" type="double"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="Socket_Connector" active="false">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+                <property name="fsname"><![CDATA[:55555]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+            <connector class="fs" name="Csv_Connector" active="true">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="rate"><![CDATA[25]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+                <property name="fsname"><![CDATA[@PROJDIR@/gps_input.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+            <connector class="fs" name="Position_Out_Connector" active="false">
+              <properties>
+                <property name="type"><![CDATA[sub]]></property>
+                <property name="snapshot"><![CDATA[true]]></property>
+                <property name="dateformat"><![CDATA[%m/%d/%Y:%H:%M:%S]]></property>
+                <property name="fsname"><![CDATA[@PROJDIR@/sensorLog_output.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-compute pubsub="true" name="convertToImperial">
+          <splitter-expr>
+            <expression><![CDATA[locationError]]></expression>
+          </splitter-expr>
+          <schema>
+            <fields>
+              <field name="id" type="int64" key="true"/>
+              <field name="locDatetime" type="string"/>
+              <field name="vendorId" type="string"/>
+              <field name="locLatitude" type="double"/>
+              <field name="locLongitude" type="double"/>
+              <field name="speedMPH" type="double"/>
+              <field name="compassDir" type="string"/>
+              <field name="altitudeFt" type="double"/>
+              <field name="datetimeFmt" type="string"/>
+              <field name="locationError" type="int64"/>
+            </fields>
+          </schema>
+          <output>
+            <field-expr><![CDATA[locDatetime]]></field-expr>
+            <field-expr><![CDATA[vendorId]]></field-expr>
+            <field-expr><![CDATA[locLatitude]]></field-expr>
+            <field-expr><![CDATA[locLongitude]]></field-expr>
+            <field-expr><![CDATA[locSpeed * 2.23694]]></field-expr>
+            <field-expr><![CDATA[if (locCourse >= 315) or (locCourse <= 45) then return "N" else if (locCourse >= 45) and (locCourse <= 135) then return "E" else if (locCourse >= 135) and (locCourse <= 225) then return "S" else return "W"]]></field-expr>
+            <field-expr><![CDATA[locAltitude * 3.28084]]></field-expr>
+            <field-expr><![CDATA[formatdate(locDatetime,"YYYY-MM-DD hh:mm:ss")]]></field-expr>
+            <field-expr><![CDATA[if locHorAcc >= 0 and locHorAcc <= 20 and locVerAcc >= 0 and locVerAcc <= 20 then return 0 else return 1]]></field-expr>
+          </output>
+        </window-compute>
+        <window-source pubsub="true" name="schooolZones">
+          <schema>
+            <fields>
+              <field name="ID" type="int64" key="true"/>
+              <field name="name" type="string"/>
+              <field name="datadef" type="string"/>
+              <field name="type" type="string"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="Zones_Connector">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="fsname"><![CDATA[@PROJDIR@/school_zones.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="noautogenfield"><![CDATA[true]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-geofence pubsub="true" name="monitorSchoolZones">
+          <geofence coordinate-type="geographic" autosize-mesh="true" max-meshcells-per-geometry="500" log-invalid-geometry="true" strict-projection="true"/>
+          <geometry geotype-fieldname="type" desc-fieldname="name" data-fieldname="datadef" radius="50" data-separator=" "/>
+          <position x-fieldname="locLongitude" y-fieldname="locLatitude" lookupdistance="0"/>
+          <output geoid-fieldname="geoid" geodesc-fieldname="geodesc" geodistance-fieldname="geodist" segmentnumber-fieldname="closest"/>
+          <connectors>
+            <connector class="fs" name="New_Connector_1" active="false">
+              <properties>
+                <property name="type"><![CDATA[sub]]></property>
+                <property name="snapshot"><![CDATA[true]]></property>
+                <property name="fsname"><![CDATA[@PROJDIR@/geo_out.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-geofence>
+        <window-filter pubsub="true" name="inSchoolZone">
+          <expression><![CDATA[geoid != ''  AND 
+(
+(closest  == 1 and geodist < 0)  OR 
+(closest == 2) OR
+(closest == 3 and geodist > 0)
+)]]></expression>
+        </window-filter>
+        <window-pattern name="violations">
+          <schema>
+            <fields>
+              <field name="patternID" type="int64" key="true"/>
+              <field name="locDatetime" type="string"/>
+              <field name="vendorID" type="string"/>
+              <field name="schoolZone" type="string"/>
+              <field name="direction" type="string"/>
+              <field name="speedMPH_e1" type="double"/>
+              <field name="speedMPH_e2" type="double"/>
+              <field name="speedMPH_e3" type="double"/>
+              <field name="speedMPH_e4" type="double"/>
+              <field name="speedMPH_e5" type="double"/>
+            </fields>
+          </schema>
+          <patterns>
+            <pattern name="detectSpeeding" index="vendorId">
+              <events>
+                <event name="e1" source="changeToInsert"><![CDATA[(speedMPH > 30) ]]></event>
+                <event name="e2" source="changeToInsert"><![CDATA[(speedMPH > 30)  ]]></event>
+                <event name="e3" source="changeToInsert"><![CDATA[(speedMPH > 30)  ]]></event>
+                <event name="e4" source="changeToInsert"><![CDATA[(speedMPH > 30)]]></event>
+                <event name="e5" source="changeToInsert"><![CDATA[(speedMPH > 30)]]></event>
+              </events>
+              <logic><![CDATA[fby(is(e1),is(e2),is(e3),is(e4),is(e5))]]></logic>
+              <output>
+                <field-selection name="locDatetime" node="e1"/>
+                <field-selection name="vendorId" node="e3"/>
+                <field-selection name="geodesc" node="e1"/>
+                <field-selection name="compassDir" node="e1"/>
+                <field-selection name="speedMPH" node="e1"/>
+                <field-selection name="speedMPH" node="e2"/>
+                <field-selection name="speedMPH" node="e3"/>
+                <field-selection name="speedMPH" node="e4"/>
+                <field-selection name="speedMPH" node="e5"/>
+              </output>
+            </pattern>
+          </patterns>
+        </window-pattern>
+        <window-copy pubsub="true" index="pi_HASH" name="errors">
+          <retention type="bytime_sliding"><![CDATA[1 hours]]></retention>
+        </window-copy>
+        <window-notification name="sendWarning">
+          <smtp host="smtp.gmail.com" user="zephstemle@gmail.com" password="M)N!ca9999" port="587"/>
+          <delivery-channels>
+            <email throttle-interval="1 minutes" name="warningMessage" test="true">
+              <email-info>
+                <sender><![CDATA[zephstemle@gmail.com]]></sender>
+                <recipients><![CDATA[zeph.stemle@sas.com]]></recipients>
+                <subject><![CDATA[Testing]]></subject>
+                <from><![CDATA[Greenwood Community Schools]]></from>
+                <to><![CDATA[$vendorID]]></to>
+              </email-info>
+              <email-contents>
+                <html-content name="New_Field_1"><![CDATA[You were clocked doing $speedMPH_e5 MPH, travelling $direction in the $schoolZone school zone.]]></html-content>
+              </email-contents>
+            </email>
+          </delivery-channels>
+        </window-notification>
+        <window-remove-state remove="deletes retentionUpdates retentionDeletes updateBlockDeletes" pubsub="true" name="changeToInsert"/>
+      </windows>
+      <edges>
+        <edge source="inputGPS" target="convertToImperial"/>
+        <edge source="convertToImperial" target="monitorSchoolZones" role="position" slot="0"/>
+        <edge source="schooolZones" target="monitorSchoolZones" role="geometry"/>
+        <edge source="monitorSchoolZones" target="inSchoolZone"/>
+        <edge source="convertToImperial" target="errors" slot="1"/>
+        <edge source="violations" target="sendWarning"/>
+        <edge source="inSchoolZone" target="changeToInsert"/>
+        <edge source="changeToInsert" target="violations"/>
+      </edges>
+    </contquery>
+  </contqueries>
+</project>
